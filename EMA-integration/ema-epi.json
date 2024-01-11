@@ -16,7 +16,7 @@
                     "Retrieval"
                 ],
                 "summary": "/api/fhir/ListByGTIN - GET",
-                "description": "Endpoint to retrieve lists based on GTIN",
+                "description": "/api/fhir/ListByGTIN - GET",
                 "operationId": "get-api-retrieval-listbygtin",
                 "parameters": [
                     {
