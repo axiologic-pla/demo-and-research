@@ -1,0 +1,1129 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "EMA.EPI.Consuming",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "https://epi.ema.europa.eu/consuming"
+        }
+    ],
+    "paths": {
+        "/api/fhir/List/{id}": {
+            "get": {
+                "tags": [
+                    "Retrieval"
+                ],
+                "summary": "/api/fhir/ListById - GET",
+                "description": "/api/fhir/ListById - GET",
+                "operationId": "get-api-retrieval-listbyid",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ListResponse"
+                                },
+                                "example": {
+                                    "resourceType": "string",
+                                    "title": "string",
+                                    "note": [
+                                        {
+                                            "text": "string"
+                                        }
+                                    ],
+                                    "id": "string",
+                                    "meta": {
+                                        "versionId": "string",
+                                        "lastUpdated": "string"
+                                    },
+                                    "identifier": [
+                                        {
+                                            "system": "string",
+                                            "value": "string"
+                                        }
+                                    ],
+                                    "status": "string",
+                                    "mode": "string",
+                                    "code": {
+                                        "coding": [
+                                            {
+                                                "system": "string",
+                                                "code": "string",
+                                                "display": "string"
+                                            }
+                                        ]
+                                    },
+                                    "subject": {
+                                        "extension": [
+                                            {
+                                                "url": "string",
+                                                "valueCoding": {
+                                                    "system": "string",
+                                                    "code": "string",
+                                                    "display": "string"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "entry": [
+                                        {
+                                            "item": {
+                                                "extension": [
+                                                    {
+                                                        "url": "string",
+                                                        "valueCoding": {
+                                                            "system": "string",
+                                                            "code": "string",
+                                                            "display": "string"
+                                                        }
+                                                    }
+                                                ],
+                                                "reference": "string"
+                                            }
+                                        }
+                                    ],
+                                    "issue": [
+                                        {
+                                            "severity": "string",
+                                            "code": "string",
+                                            "diagnostics": "string"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ListResponse"
+                                },
+                                "example": "<ListResponse> <resourceType>string</resourceType> <title>string</title> <note> <text>string</text> </note> <id>string</id> <meta> <versionId>string</versionId> <lastUpdated>string</lastUpdated> </meta> <identifier> <system>string</system> <value>string</value> </identifier> <status>string</status> <mode>string</mode> <code> <coding> <system>string</system> <code>string</code> <display>string</display> </coding> </code> <subject> <extension> <url>string</url> <valueCoding> <system>string</system> <code>string</code> <display>string</display> </valueCoding> </extension> </subject> <entry> <item> <extension> <url>string</url> <valueCoding> <system>string</system> <code>string</code> <display>string</display> </valueCoding> </extension> <reference>string</reference> </item> </entry> <issue> <severity>string</severity> <code>string</code> <diagnostics>string</diagnostics> </issue> </ListResponse>"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                },
+                                "example": {
+                                    "message": "string",
+                                    "errorStack": "string"
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                },
+                                "example": "<ErrorResponse> <message>string</message> <errorStack>string</errorStack> </ErrorResponse>"
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Client Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                },
+                                "example": {
+                                    "message": "string",
+                                    "errorStack": "string"
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                },
+                                "example": "<ErrorResponse> <message>string</message> <errorStack>string</errorStack> </ErrorResponse>"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                },
+                                "example": {
+                                    "message": "string",
+                                    "errorStack": "string"
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                },
+                                "example": "<ErrorResponse> <message>string</message> <errorStack>string</errorStack> </ErrorResponse>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/fhir/List": {
+            "get": {
+                "tags": [
+                    "Retrieval"
+                ],
+                "summary": "/api/fhir/ListByTitle - GET",
+                "description": "/api/fhir/ListByTitle - GET",
+                "operationId": "get-api-retrieval-listbytitle",
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BundleListResponse"
+                                },
+                                "example": {
+                                    "id": "string",
+                                    "meta": {
+                                        "versionId": "string",
+                                        "lastUpdated": "string"
+                                    },
+                                    "type": "string",
+                                    "entry": [
+                                        {
+                                            "fullUrl": "string",
+                                            "resource": {
+                                                "resourceType": 0,
+                                                "id": "string",
+                                                "title": "string",
+                                                "note": [
+                                                    {
+                                                        "text": "string"
+                                                    }
+                                                ],
+                                                "meta": {
+                                                    "versionId": "string",
+                                                    "lastUpdated": "string"
+                                                },
+                                                "identifier": [
+                                                    {
+                                                        "system": "string",
+                                                        "value": "string"
+                                                    }
+                                                ],
+                                                "status": "string",
+                                                "mode": "string",
+                                                "code": {
+                                                    "coding": [
+                                                        {
+                                                            "system": "string",
+                                                            "code": "string",
+                                                            "display": "string"
+                                                        }
+                                                    ]
+                                                },
+                                                "subject": {
+                                                    "extension": [
+                                                        {
+                                                            "url": "string",
+                                                            "valueCoding": {
+                                                                "system": "string",
+                                                                "code": "string",
+                                                                "display": "string"
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                "entry": [
+                                                    {
+                                                        "item": {
+                                                            "extension": [
+                                                                {
+                                                                    "url": "string",
+                                                                    "valueCoding": {
+                                                                        "system": "string",
+                                                                        "code": "string",
+                                                                        "display": "string"
+                                                                    }
+                                                                }
+                                                            ],
+                                                            "reference": "string"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ],
+                                    "issue": [
+                                        {
+                                            "severity": "string",
+                                            "code": "string",
+                                            "diagnostics": "string"
+                                        }
+                                    ]
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BundleListResponse"
+                                },
+                                "example": "<BundleListResponse> <id>string</id> <meta> <versionId>string</versionId> <lastUpdated>string</lastUpdated> </meta> <type>string</type> <entry> <fullUrl>string</fullUrl> <resource> <resourceType>0</resourceType> <id>string</id> <title>string</title> <note> <text>string</text> </note> <meta> <versionId>string</versionId> <lastUpdated>string</lastUpdated> </meta> <identifier> <system>string</system> <value>string</value> </identifier> <status>string</status> <mode>string</mode> <code> <coding> <system>string</system> <code>string</code> <display>string</display> </coding> </code> <subject> <extension> <url>string</url> <valueCoding> <system>string</system> <code>string</code> <display>string</display> </valueCoding> </extension> </subject> <entry> <item> <extension> <url>string</url> <valueCoding> <system>string</system> <code>string</code> <display>string</display> </valueCoding> </extension> <reference>string</reference> </item> </entry> </resource> </entry> <issue> <severity>string</severity> <code>string</code> <diagnostics>string</diagnostics> </issue> </BundleListResponse>"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                },
+                                "example": {
+                                    "message": "string",
+                                    "errorStack": "string"
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                },
+                                "example": "<ErrorResponse> <message>string</message> <errorStack>string</errorStack> </ErrorResponse>"
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Client Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                },
+                                "example": {
+                                    "message": "string",
+                                    "errorStack": "string"
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                },
+                                "example": "<ErrorResponse> <message>string</message> <errorStack>string</errorStack> </ErrorResponse>"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                },
+                                "example": {
+                                    "message": "string",
+                                    "errorStack": "string"
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                },
+                                "example": "<ErrorResponse> <message>string</message> <errorStack>string</errorStack> </ErrorResponse>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/fhir/Bundle/{id}": {
+            "get": {
+                "tags": [
+                    "Retrieval"
+                ],
+                "summary": "/api/fhir/BundleById - GET",
+                "description": "/api/fhir/BundleById - GET",
+                "operationId": "get-api-retrieval-bundlebyid",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BundleResponse"
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BundleResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                },
+                                "example": {
+                                    "message": "string",
+                                    "errorStack": "string"
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                },
+                                "example": "<ErrorResponse> <message>string</message> <errorStack>string</errorStack> </ErrorResponse>"
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Client Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                },
+                                "example": {
+                                    "message": "string",
+                                    "errorStack": "string"
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                },
+                                "example": "<ErrorResponse> <message>string</message> <errorStack>string</errorStack> </ErrorResponse>"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                },
+                                "example": {
+                                    "message": "string",
+                                    "errorStack": "string"
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                },
+                                "example": "<ErrorResponse> <message>string</message> <errorStack>string</errorStack> </ErrorResponse>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/fhir/ListByGTIN": {
+            "get": {
+                "tags": [
+                    "Retrieval"
+                ],
+                "summary": "/api/fhir/ListByGTIN - GET",
+                "description": "Endpoint to retrieve lists based on GTIN",
+                "operationId": "get-api-retrieval-listbygtin",
+                "parameters": [
+                    {
+                        "name": "gtin",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ListResponse"
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ListResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "422": {
+                        "description": "Client Error"
+                    },
+                    "500": {
+                        "description": "Server Error"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Annotation": {
+                "type": "object",
+                "properties": {
+                    "text": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "Attester": {
+                "type": "object",
+                "properties": {
+                    "party": {
+                        "$ref": "#/components/schemas/Party"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "Author": {
+                "type": "object",
+                "properties": {
+                    "identifier": {
+                        "$ref": "#/components/schemas/Identifier"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "BinaryResource": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "resourceType": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "contentType": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "data": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "BundleListResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "meta": {
+                        "$ref": "#/components/schemas/Metadata"
+                    },
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "entry": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ResourceInformationList"
+                        },
+                        "nullable": true
+                    },
+                    "issue": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/IssueResponse"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "BundleResponse": {
+                "type": "object",
+                "properties": {
+                    "resourceType": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "id": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "meta": {
+                        "$ref": "#/components/schemas/Metadata"
+                    },
+                    "identifier": {
+                        "$ref": "#/components/schemas/Identifier"
+                    },
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "timestamp": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "entry": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ResourceInformationRequest"
+                        },
+                        "nullable": true
+                    },
+                    "issue": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/IssueResponse"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "ErrorResponse": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "errorStack": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "ExtensionList": {
+                "type": "object",
+                "properties": {
+                    "url": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "valueCoding": {
+                        "$ref": "#/components/schemas/ProductCode"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "FHIResourceType": {
+                "enum": [
+                    0,
+                    1,
+                    2,
+                    3
+                ],
+                "type": "integer",
+                "format": "int32"
+            },
+            "Identifier": {
+                "type": "object",
+                "properties": {
+                    "system": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "value": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "IssueResponse": {
+                "type": "object",
+                "properties": {
+                    "severity": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "code": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "diagnostics": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "Item": {
+                "type": "object",
+                "properties": {
+                    "extension": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ExtensionList"
+                        },
+                        "nullable": true
+                    },
+                    "reference": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "ItemList": {
+                "type": "object",
+                "properties": {
+                    "item": {
+                        "$ref": "#/components/schemas/Item"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "ListResource": {
+                "type": "object",
+                "properties": {
+                    "resourceType": {
+                        "$ref": "#/components/schemas/FHIResourceType"
+                    },
+                    "id": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "title": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "note": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Annotation"
+                        },
+                        "nullable": true
+                    },
+                    "meta": {
+                        "$ref": "#/components/schemas/Metadata"
+                    },
+                    "identifier": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Identifier"
+                        },
+                        "nullable": true
+                    },
+                    "status": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "mode": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "code": {
+                        "$ref": "#/components/schemas/ProductCodeResource"
+                    },
+                    "subject": {
+                        "$ref": "#/components/schemas/SubjectList"
+                    },
+                    "entry": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ItemList"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "ListResponse": {
+                "type": "object",
+                "properties": {
+                    "resourceType": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "title": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "note": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Annotation"
+                        },
+                        "nullable": true
+                    },
+                    "id": {
+                        "type": "string",
+                        "format": "uuid",
+                        "nullable": true
+                    },
+                    "meta": {
+                        "$ref": "#/components/schemas/Metadata"
+                    },
+                    "identifier": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Identifier"
+                        },
+                        "nullable": true
+                    },
+                    "status": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "mode": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "code": {
+                        "$ref": "#/components/schemas/ProductCodeResource"
+                    },
+                    "subject": {
+                        "$ref": "#/components/schemas/SubjectList"
+                    },
+                    "entry": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ItemList"
+                        },
+                        "nullable": true
+                    },
+                    "issue": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/IssueResponse"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "Metadata": {
+                "type": "object",
+                "properties": {
+                    "versionId": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "lastUpdated": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "Party": {
+                "type": "object",
+                "properties": {
+                    "reference": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "display": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "ProductCode": {
+                "type": "object",
+                "properties": {
+                    "system": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "code": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "display": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "ProductCodeList": {
+                "type": "object",
+                "properties": {
+                    "coding": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ProductCode"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "ProductCodeResource": {
+                "type": "object",
+                "properties": {
+                    "coding": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ProductCode"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "ProductInformationRequest": {
+                "type": "object",
+                "properties": {
+                    "resourceType": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "language": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "contained": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/BinaryResource"
+                        },
+                        "nullable": true
+                    },
+                    "status": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "type": {
+                        "$ref": "#/components/schemas/ProductCodeResource"
+                    },
+                    "subject": {
+                        "$ref": "#/components/schemas/Subject"
+                    },
+                    "date": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "author": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Author"
+                        },
+                        "nullable": true
+                    },
+                    "title": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "attester": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Attester"
+                        },
+                        "nullable": true
+                    },
+                    "relatesTo": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/RelateResource"
+                        },
+                        "nullable": true
+                    },
+                    "section": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/SectionDetails"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "RelateResource": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "targetReference": {
+                        "$ref": "#/components/schemas/TargetResource"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "ResourceInformationList": {
+                "type": "object",
+                "properties": {
+                    "fullUrl": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "resource": {
+                        "$ref": "#/components/schemas/ListResource"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "ResourceInformationRequest": {
+                "type": "object",
+                "properties": {
+                    "fullUrl": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "resource": {
+                        "$ref": "#/components/schemas/ProductInformationRequest"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "SectionDetails": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "title": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "text": {
+                        "$ref": "#/components/schemas/TextAttribute"
+                    },
+                    "section": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/SectionDetails"
+                        },
+                        "nullable": true
+                    },
+                    "code": {
+                        "$ref": "#/components/schemas/ProductCodeList"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "Subject": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "reference": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "display": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "SubjectList": {
+                "type": "object",
+                "properties": {
+                    "extension": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ExtensionList"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "TargetResource": {
+                "type": "object",
+                "properties": {
+                    "reference": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "TextAttribute": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "div": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        "securitySchemes": {
+            "apiKeyHeader": {
+                "type": "apiKey",
+                "name": "Ocp-Apim-Subscription-Key",
+                "in": "header"
+            },
+            "apiKeyQuery": {
+                "type": "apiKey",
+                "name": "subscription-key",
+                "in": "query"
+            }
+        }
+    },
+    "security": [
+        {
+            "apiKeyHeader": []
+        },
+        {
+            "apiKeyQuery": []
+        }
+    ]
+}
