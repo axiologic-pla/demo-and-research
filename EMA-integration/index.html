@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        #searchForm {
+            margin: 20px auto;
+        }
+
+        #productTitle {
+            width: 400px;
+            height: 30px;
+            font-size: 16px;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            background-color: #f8f8f8;
+            border: 1px solid #f8f8f8;
+            border-radius: 4px;
+            color: black;
+            padding: 10px 20px;
+            margin: 0 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            border: 1px solid #c6c6c6;
+        }
+
+        #results {
+            margin-top: 30px;
+            text-align: left;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<script src="search.js"></script>
+<div id="searchForm">
+    <input type="text" id="productTitle" placeholder="Enter Product Title">
+    <button onclick="searchProduct()">Search</button>
+</div>
+<div id="results"></div>
+<script>
+    document.getElementById("productTitle").addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault(); // Prevent the default action (form submission)
+            searchProduct();        // Call the search function
+        }
+    });
+</script>
+</body>
+</html>
