@@ -1,0 +1,249 @@
+@import "prerequisites.css";
+@import "leaflet.css";
+
+html {
+    height: 100%;
+}
+
+body {
+    padding: 0;
+    font-weight: 400;
+    height: 100%;
+    font-size: var(--font-size--basic);
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    margin: 0;
+}
+
+.page-container {
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--olivegreen);
+    font-size: 16px;
+    overflow: hidden;
+}
+
+.icon-container {
+    height: 8.5%;
+    color: #fff;
+    display: flex;
+}
+
+.pharmaledger-logo {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin-left: 18px;
+}
+
+.pharmaledger-logo img {
+    height: 60%;
+}
+
+.viewport-select-container {
+    display: flex;
+    gap: 15px;
+    margin-right: 36px;
+    align-items: center;
+}
+
+#viewportSelector, #zoomSelector {
+    background: #315864;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    outline: 0;
+}
+
+.orientation-img.selected {
+    filter: invert(75%) sepia(37%) saturate(569%) hue-rotate(96deg) brightness(280%) contrast(84%);
+}
+
+.main-content-container {
+    display: flex;
+    height: 100%;
+}
+
+.upload-container {
+    width: 25%;
+    border-right: 1px solid black;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 300px;
+}
+
+.product-name-container,
+.product-description-container,
+.leaflet-language-container,
+.file-upload-container {
+    margin: 0px 18px;
+}
+
+.form-label {
+    margin-bottom: 5px;
+}
+
+.product-name-container input,
+.product-description-container textarea {
+    width: calc(100% - 15px);
+    border-radius: 5px;
+    padding: 15px 0px 15px 15px;
+}
+
+.leaflet-language-container select {
+    width: 100%;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.upload-files-btn {
+    border: none;
+    background: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.hiddenElement {
+    display: none;
+}
+
+.page-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--olivegreen);
+    color: #fff;
+    padding: 2.5rem 1.5rem;
+}
+
+.page-content {
+    position: relative;
+    color: #04313B;
+    background: #fff;
+    font-size: var(--font-size--basic);
+    flex-grow: 1;
+}
+
+.leaflet-preview-container {
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    background: #152E36;
+}
+
+#settings-modal {
+    margin: auto;
+    margin: 5% auto 15%;
+}
+
+.modal-body {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    margin: 0;
+}
+
+.modal-body .modal-content {
+    padding: 0 24px 74px;
+    height: 100%;
+    max-height: 100%;
+}
+
+
+.files-list {
+    scroll-behavior: smooth;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    max-height: 40vh;
+    width: 100%;
+}
+
+.file-li-element {
+    display: flex;
+    align-items: baseline;
+    padding-left: 10px;
+    background: #7B969F;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    justify-content: space-between;
+}
+
+.file-li-element p {
+    width: 100%;
+    line-break: anywhere;
+    padding-right: 5px;
+}
+
+.file-li-element button {
+    background-color: #fff;
+    box-shadow: none;
+    border: 1px solid #fff;
+    margin-right: 10px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    font-size: 12px;
+    user-select: none;
+    color: black;
+    text-align: center;
+    line-height: 16px;
+}
+
+dialog {
+    border-radius: 8px;
+    border: none;
+    max-width: 400px;
+    padding: 0;
+}
+
+dialog header {
+    height: 5rem;
+    background-color: var(--red-100);
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    font-size: 20px;
+    align-items: center;
+}
+
+dialog section {
+    text-align: left;
+    padding: 10px;
+}
+
+dialog section p {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+dialog footer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+dialog footer button {
+    background: var(--olivegreen);
+    color: white;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}

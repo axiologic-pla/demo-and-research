@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="css/preview.css" rel="stylesheet">
+    <script src="js/controllers/LeafletPreviewController.js" type="module"></script>
+    <title>PharmaLedger leaflet preview</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../favicon/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="../favicon/favicon.ico">
+    <link rel="manifest" href="../favicon/site.webmanifest">
+
+</head>
+<body>
+
+<div class="loader-container main-page-loader">
+    <div class="font-control">
+        <span>Lorem ipsum text example</span>
+    </div>
+    <div class="loader"></div>
+</div>
+
+<div class="page-container hiddenElement">
+    <div class="icon-container" role="banner">
+        <div class="pharmaledger-logo">
+            <img src="images/app-icon.png" alt="PharmaLedger Association Logo">
+
+            <div class="viewport-select-container custom-dropdown">
+                <select id="zoomSelector">
+                    <option value="100">100%</option>
+                    <option value="115">115%</option>
+                    <option value="130">130%</option>
+                    <option value="150">150%</option>
+                    <option value="175">175%</option>
+                    <option value="200">200%</option>
+                    <option value="250">250%</option>
+                    <option value="300">300%</option>
+                    <!-- Add more options as needed -->
+                </select>
+                <select id="viewportSelector">
+                    <!-- options from devices list on load-->
+                </select>
+                <img src="images/portrait-btn.svg" class="orientation-img portrait selected">
+                <img src="images/landscape-btn.svg" class="orientation-img landscape">
+
+            </div>
+        </div>
+    </div>
+    <div class="main-content-container">
+        <div class="upload-container">
+            <div class="product-name-container bold-title">
+                <div class="form-label">Brand/invented name</div>
+                <input class="form-control" placeholder="Add product name" type="text"/>
+            </div>
+            <div class="product-description-container">
+                <div class="form-label">Name of Medicinal Product</div>
+                <textarea placeholder="Add product description" required rows="4"></textarea>
+            </div>
+            <div class="leaflet-language-container">
+                <div class="form-label">Leaflet language</div>
+                <select id="leafletLanguage">
+                    <!-- options from languages list on load-->
+                </select>
+            </div>
+            <div class="file-upload-container">
+                <div>
+                    <div class="files-list">
+                    </div>
+                </div>
+                <button class="upload-files-btn default-button"><img
+                        src="images/upload-btn.svg"><span>Upload Leaflet Files</span></button>
+                <input type="file" multiple class="hiddenElement" required directory mozdirectory webkitdirectory/>
+
+            </div>
+        </div>
+        <div class="leaflet-preview-container">
+            <dialog>
+                <header>
+                    <img src="images/error-icon.svg">
+                    <span>Error!</span>
+                </header>
+                <section>
+                    <p class="header">There was an issue with your recent attempt: </p>
+                    <ul class="dialog-text"></ul>
+                    <p>Please fix the issue and try
+                        again.</p>
+                </section>
+                <footer>
+                    <button>Close</button>
+                </footer>
+            </dialog>
+            <div id="settings-modal" class="page-container leaflet-page info-modal hiddenElement">
+                <div class="modal-body">
+                    <div class="page-header modal-header left-aligned-header">
+                        <div class="icon-title-container" tabindex="0">
+                            <h1 class="product-name .bold-title"></h1>
+                        </div>
+                        <div class="product-description" tabindex="0"></div>
+                    </div>
+                    <div class="page-content">
+                        <div class="leaflet-content-wrapper">
+                            <div id="leaflet-content">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
