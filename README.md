@@ -10,4 +10,4 @@ You can find the link to the proposed API [here](https://docs.google.com/documen
 
 
 ## Lealfet Preview tool
-[Leaflet Preview Demo Installation] (https://axiologic-pla.github.io/leaflet-preview/)  
+[Leaflet Preview Demo Installation](https://axiologic-pla.github.io/leaflet-preview/)  
