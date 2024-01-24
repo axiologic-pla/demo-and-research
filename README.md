@@ -7,3 +7,7 @@ You can search the leaflet for a product [here](https://axiologic-pla.github.io/
 The products registered in the EMA EPI pilot can be found [here](https://plm-portal.ema.europa.eu/ePIAll/).
 
 You can find the link to the proposed API [here](https://docs.google.com/document/d/1QHcKkgigi9HrfD-ZLdC6dNiEe_jZ_Q5f/edit?usp=sharing&ouid=104730176923327656197&rtpof=true&sd=true).
+
+
+## Lealfet Preview tool
+[Leaflet Preview Demo Installation] (https://axiologic-pla.github.io/leaflet-preview/)  
